@@ -65,7 +65,7 @@ export default function MemeFormModal({ isOpen, onClose, onSuccess }: MemeFormMo
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="personName" className="block text-sm font-medium text-gray-700 mb-1">
-              Seu Nome / Nome do Criador:
+              Nome:
             </label>
             <input
               type="text"
@@ -73,14 +73,14 @@ export default function MemeFormModal({ isOpen, onClose, onSuccess }: MemeFormMo
               value={personName}
               onChange={(e) => setPersonName(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Ex: João da Silva"
+              placeholder="Ex: Ronaldin"
               required
             />
           </div>
 
           <div>
             <label htmlFor="imageDescription" className="block text-sm font-medium text-gray-700 mb-1">
-              Descrição do Meme (Opcional):
+              Descrição:
             </label>
             <textarea
               id="imageDescription"
@@ -88,7 +88,7 @@ export default function MemeFormModal({ isOpen, onClose, onSuccess }: MemeFormMo
               onChange={(e) => setImageDescription(e.target.value)}
               rows={3}
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Ex: Meme do cachorro triste..."
+              placeholder="Ex: Falaro"
               required
             ></textarea>
           </div>
