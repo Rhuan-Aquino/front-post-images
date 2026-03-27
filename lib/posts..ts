@@ -11,8 +11,8 @@ export interface MemePost {
 }
 
 // Obtenha a URL da API da variável de ambiente
-// Usamos process.env.NEXT_PUBLIC_API que você já configurou
-const API_BASE_URL = process.env.NEXT_PUBLIC_API;
+// Usamos process.env.NEXT_PUBLIC_API_URL que você já configurou
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 // Função para lidar com erros de requisição
 const handleApiResponse = async (response: Response) => {
@@ -30,7 +30,7 @@ const handleApiResponse = async (response: Response) => {
  */
 export async function getAllMemes(): Promise<MemePost[]> {
   if (!API_BASE_URL) {
-    throw new Error("NEXT_PUBLIC_API não está configurada no frontend.");
+    throw new Error("NEXT_PUBLIC_API_URL não está configurada no frontend.");
   }
   try {
     const response = await fetch(`${API_BASE_URL}/api/posts`);
@@ -49,7 +49,7 @@ export async function getAllMemes(): Promise<MemePost[]> {
  */
 export async function createMeme(formData: FormData): Promise<MemePost> {
   if (!API_BASE_URL) {
-    throw new Error("NEXT_PUBLIC_API não está configurada no frontend.");
+    throw new Error("NEXT_PUBLIC_API_URL não está configurada no frontend.");
   }
   try {
     const response = await fetch(`${API_BASE_URL}/api/posts`, {
@@ -70,7 +70,7 @@ export async function createMeme(formData: FormData): Promise<MemePost> {
  */
 export async function deleteMeme(id: string): Promise<void> {
   if (!API_BASE_URL) {
-    throw new Error("NEXT_PUBLIC_API não está configurada no frontend.");
+    throw new Error("NEXT_PUBLIC_API_URL não está configurada no frontend.");
   }
   try {
     const response = await fetch(`${API_BASE_URL}/api/posts/${id}`, {
